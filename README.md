@@ -1,12 +1,12 @@
 # University Analytics Dashboard (Power BI)
 
-## Project Objective
+## Objective
 The objective of this project is to perform a detailed analysis of university data using **Power BI**.  
 It leverages **data modeling and interactive visualizations** to monitor student performance, faculty effectiveness, and institutional financial health.
 
 ---
 
-# Project Description
+## Description
 This repository contains a comprehensive academic analytics environment that simulates a university ecosystem.
 
 The project explores multiple aspects of university operations including:
@@ -21,7 +21,7 @@ The dashboard provides **data-driven indicators that can support decision-making
 
 ---
 
-# Tools & Technologies
+## Tools & Technologies
 
 The following stack was used to build this end-to-end analytics solution:
 
@@ -35,11 +35,9 @@ The following stack was used to build this end-to-end analytics solution:
 
 ---
 
-# Dataset Description
+## Dataset Description
 
-The source data is stored in:
-
-Project.xlsx
+The source data is stored in **Project.xlsx**
 
 The dataset consists of **6 relational tables**:
 
@@ -50,7 +48,6 @@ Includes fields such as:
 
 - Cohort ID
 - SOC ID
-- Revenue
 - Country
 - Institute
 - Department
@@ -58,7 +55,6 @@ Includes fields such as:
 - Fees
 - Other Charges
 - Expenditures
-- Profit
 
 ---
 
@@ -92,7 +88,6 @@ Key metrics include:
 - Module ID
 - Student ID
 - Faculty ID
-- Result
 
 ---
 
@@ -111,13 +106,14 @@ Fields include:
 ### 5️. Feedback Table
 Contains student feedback responses regarding teaching quality.
 
-Questions include:
+Fields include:
 
-- Q01 Professors teach well at this university?
-- Q02 Teacher encourage us to perform better?
-- Q03 I feel job-competent moving forward from this university?
-- Q04 Lecturers were proficient enough?
-- Q05 I would like to recommend this educational institution to others?
+- Q01 - Professors teach well at this university?
+- Q02 - Teacher encourage us to perform better?
+- Q03 - I feel job-competent moving forward from this university?
+- Q04 - Lecturers were proficient enough?
+- Q05 - I would like to recommend this educational institution to others?
+- Student ID
 
 ---
 
@@ -134,7 +130,7 @@ Fields include:
 
 ---
 
-# Data Model Architecture
+## Data Model Architecture
 
 The dataset follows a **fact-dimension relational structure** designed for analytical reporting.
 
@@ -161,26 +157,27 @@ These tables provide descriptive attributes that allow analysis across **student
 
 ### Table Relationships
 
-Cohort (1) → SOC ()
-SOC (1) → Student ()
-Student (1) → Attendance ()
-Faculty (1) → Attendance ()
+```
+Cohort (1) → SOC (*)
+SOC (1) ↔ Student (*)
+Student (1) → Attendance (*)
+Faculty (1) → Attendance (*)
 Student (1) ↔ Feedback (1)
+```
 
+## Data Model Diagram
 
-### Data Model Diagram
-
-![Data Model](Data Model.png)
+![Data Model](data_model.png)
 
 ---
 
-# Dashboard Reports
+## Dashboard Reports
 
 This project contains **three interactive Power BI dashboards**.
 
 ---
 
-## Student Performance Dashboard
+### Student Performance Dashboard
 
 Focuses on **individual student performance analysis**.
 
@@ -193,11 +190,12 @@ Key metrics include:
 - Module-wise attendance
 - Student feedback scores
 
+
 ![Student Report](student_report.png)
 
 ---
 
-## Faculty Performance Dashboard
+### Faculty Performance Dashboard
 
 Evaluates **faculty teaching effectiveness**.
 
@@ -210,11 +208,12 @@ Metrics include:
 - Feedback scores by cohort
 - Year-wise performance trends
 
+
 ![Faculty Report](faculty_report.png)
 
 ---
 
-## Management Dashboard
+### Management Dashboard
 
 Provides **institution-level insights for strategic decision-making**.
 
@@ -228,11 +227,12 @@ Key indicators include:
 - Student withdrawal reasons
 - Admission targets vs secured enrollments
 
+
 ![Management Report](management_report.png)
 
 ---
 
-# Key Insights
+## Key Insights
 
 Some major insights derived from the dashboard include:
 
@@ -245,52 +245,39 @@ Some major insights derived from the dashboard include:
 
 ---
 
-# Repository Structure
+## Repository Structure
 
+```
 University-Analytics-PowerBI
 │
 ├── Project.pbix
 ├── Project.xlsx
 ├── Project.pdf
-├── Data Model.png
-├── Student Report.png
-├── Faculty Report.png
-├── Management Report.png
+├── data_model.png
+├── student_report.png
+├── faculty_report.png
+├── management_report.png
 └── README.md
-
+```
 ---
 
-# How to Use
+## How to Use
 
-### 1️. Clone the repository
+### 1️. Clone the Repository
 
-
+```bash
 git clone https://github.com/HarshRaj57820/University-Analytics-PowerBI
+```
 
+### 2️. Open Project.pbix in Power BI Desktop.
 
-### 2️. Open the Power BI file
+### 3️. Load the Dataset
 
-Open:
-
-
-Project.pbix
-
-
-in **Power BI Desktop**.
-
-### 3️. Load the dataset
-
-Ensure the file path to:
-
-
-Project.xlsx
-
-
-is correctly mapped in **Power Query** if prompted.
+Ensure the data source path for Project.xlsx is correctly mapped in Power Query if Power BI prompts for a data source update.
 
 ---
 
-# Future Improvements
+## Future Improvements
 
 Potential enhancements for this project include:
 
@@ -301,7 +288,7 @@ Potential enhancements for this project include:
 
 ---
 
-# Author
+## Author
 
 **Harsh Raj**
 
